@@ -1,4 +1,4 @@
-# Food projects
+# Food Recipes projects
 <!DOCTYPE html>
 <html lang="en">
 <head>
