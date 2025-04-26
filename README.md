@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>README</title>
+  <title>Food recipe Project</title>
 </head>
 <body>
   <h1>Setup Instructions</h1>
