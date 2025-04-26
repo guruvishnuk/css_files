@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FreshBite - Recipes</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Reset & Base Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fffaf4;
+      color: #333;
+      line-height: 1.6;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #eee;
+    }
+
+    header {
+      background-color: #ff7043;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.4s;
+    }
+
+    body.dark-mode nav {
+      background-color: #2c2c2c;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #ff7043;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #e35c2a;
+      transform: scale(1.05);
+    }
+
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .toggle-container input[type="checkbox"] {
+      width: 40px;
+      height: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    .filter-buttons button {
+      background-color: #ff7043;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-buttons button:hover {
+      background-color: #e35c2a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .card:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+
+    .card:nth-child(odd) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      color: #ff7043;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    body.dark-mode .card {
+      background-color: #2a2a2a;
+    }
+
+    body.dark-mode .card-content p {
+      color: #ccc;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #ff7043;
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e35c2a;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍽 FreshBite Recipes</h1>
+    <p>Discover and order ingredients for your favorite dishes</p>
+  </header>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="recipe-details.html"><i class="fas fa-book-open"></i> Recipes</a>
+    <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <div class="toggle-container">
+      <label for="modeToggle">🌙</label>
+      <input type="checkbox" id="modeToggle" />
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="filter-buttons">
+      <button onclick="filterCategory('all')">All</button>
+      <button onclick="filterCategory('indian')">Indian</button>
+      <button onclick="filterCategory('snacks')">Snacks</button>
+      <button onclick="filterCategory('beverage')">Beverages</button>
+    </div>
+
+    <div class="grid" id="recipeGrid">
+      <!-- Recipe Cards -->
+      <div class="card" data-category="indian">
+        <img src="./images food/Aloo Paratha4.jpeg" alt="Aloo Paratha">
+        <div class="card-content">
+          <h3>Aloo Paratha</h3>
+          <p>Stuffed with spiced potatoes and cooked to golden perfection.</p>
+          <a href="recipe-aloo-paratha.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="indian">
+        <img src="./images food/paneer.jpg" alt="Paneer Butter Masala">
+        <div class="card-content">
+          <h3>Paneer Butter Masala</h3>
+          <p>Rich, creamy tomato-based curry with soft paneer cubes.</p>
+          <a href="recipe-paneer.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="indian">
+        <img src="./images food/cholebhature.jpg" alt="Chole Bhature">
+        <div class="card-content">
+          <h3>Chole Bhature</h3>
+          <p>Spicy chickpea curry served with fluffy fried bread.</p>
+          <a href="recipe-chole.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="snacks">
+        <img src="./images food/samosa.jpg" alt="Samosa">
+        <div class="card-content">
+          <h3>Samosa</h3>
+          <p>Crispy pastry filled with spicy mashed potatoes and peas.</p>
+          <a href="recipe-samosa.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="snacks">
+        <img src="./images food/pakora.jpg" alt="Pakora">
+        <div class="card-content">
+          <h3>Pakora</h3>
+          <p>Deep-fried fritters made with vegetables and gram flour.</p>
+          <a href="recipe-pakora.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="snacks">
+        <img src="./images food/pavbhaji.jpg" alt="Pav Bhaji">
+        <div class="card-content">
+          <h3>Pav Bhaji</h3>
+          <p>Spicy mashed vegetable curry served with buttered buns.</p>
+          <a href="recipe-pavbhaji.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="snacks">
+        <img src="./images food/vada.jpg" alt="Medu Vada">
+        <div class="card-content">
+          <h3>Medu Vada</h3>
+          <p>South Indian savory doughnuts made from lentils.</p>
+          <a href="recipe-vada.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="snacks">
+        <img src="./images food/bhel.jpg" alt="Bhel Puri">
+        <div class="card-content">
+          <h3>Bhel Puri</h3>
+          <p>Crunchy puffed rice snack tossed with tangy chutneys.</p>
+          <a href="recipe-bhelpuri.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="snacks">
+        <img src="./images food/momos.jpg" alt="Momos">
+        <div class="card-content">
+          <h3>Momos</h3>
+          <p>Steamed dumplings filled with spicy vegetables or meat.</p>
+          <a href="recipe-momos.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+      <div class="card" data-category="beverage">
+        <img src="./images food/mangolassi.jpg" alt="Mango Lassi">
+        <div class="card-content">
+          <h3>Mango Lassi</h3>
+          <p>Refreshing mango and yogurt blended drink.</p>
+          <a href="recipe-mangolassi.html" class="btn">View Recipe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FreshBite. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("modeToggle");
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+
+    function filterCategory(category) {
+      const cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        const cat = card.getAttribute("data-category");
+        if (category === "all" || cat === category) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

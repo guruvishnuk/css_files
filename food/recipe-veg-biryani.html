@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veg Biryani - FreshBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff7f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #ff7043;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .recipe-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .recipe-content {
+      padding: 2rem;
+    }
+
+    .recipe-content h1 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-content h3 {
+      color: #ff7043;
+      margin-top: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #333;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="recipe-details.html">📖 All Recipes</a>
+    </div>
+    <strong style="color:white;">FreshBite</strong>
+  </nav>
+
+  <!-- Recipe Section -->
+  <div class="recipe-container">
+    <img src="./images food/Biryani3.webp" alt="Veg Biryani" class="recipe-img">
+    <div class="recipe-content">
+      <h1>Veg Biryani</h1>
+      <p>Fragrant and spiced rice dish loaded with vegetables and aromatic herbs – a complete one-pot meal!</p>
+
+      <h3>🍛 Ingredients:</h3>
+      <ul>
+        <li>1 cup basmati rice</li>
+        <li>1 cup mixed vegetables (carrot, beans, peas, potato)</li>
+        <li>1 onion (sliced)</li>
+        <li>1 tomato (chopped)</li>
+        <li>1 tsp ginger garlic paste</li>
+        <li>2 tbsp yogurt</li>
+        <li>Whole spices (bay leaf, cloves, cinnamon, cardamom)</li>
+        <li>1 tsp garam masala</li>
+        <li>1/2 tsp turmeric powder</li>
+        <li>1/2 tsp red chili powder</li>
+        <li>2 tbsp oil or ghee</li>
+        <li>Salt to taste</li>
+        <li>Fresh mint & coriander leaves</li>
+      </ul>
+
+      <h3>👨‍🍳 Instructions:</h3>
+      <ol>
+        <li>Soak rice for 30 mins and boil until 80% cooked. Drain and keep aside.</li>
+        <li>In a pot, heat oil/ghee, add whole spices and sauté sliced onions till golden.</li>
+        <li>Add ginger garlic paste, followed by chopped tomatoes and cook till mushy.</li>
+        <li>Add turmeric, chili powder, garam masala, salt, vegetables, and yogurt. Cook till veggies are soft.</li>
+        <li>Layer half of the rice over the veggie masala. Sprinkle mint and coriander. Repeat layers.</li>
+        <li>Cover and cook on low flame for 10–15 mins. Serve hot with raita.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 FreshBite. Enjoy every bite!</p>
+  </footer>
+
+</body>
+</html>

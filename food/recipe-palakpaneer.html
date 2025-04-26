@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Palak Paneer - FreshBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #ff7043;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .recipe-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .recipe-content {
+      padding: 2rem;
+    }
+
+    .recipe-content h1 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-content h3 {
+      color: #ff7043;
+      margin-top: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #333;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Buy Ingredients Styles */
+    .buy-ingredients-form {
+      margin-top: 2rem;
+    }
+
+    .buy-ingredients-form table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .buy-ingredients-form th,
+    .buy-ingredients-form td {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .buy-ingredients-form input[type="text"] {
+      width: 90%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .cart-button {
+      margin-top: 1rem;
+      background-color: #ff7043;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cart-button:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="recipe-details.html">Recipes</a>
+    </div>
+    <strong style="color:white;">FreshBite</strong>
+  </nav>
+
+  <!-- Recipe Section -->
+  <div class="recipe-container">
+    <img src="./images food/palakpaneer.jpg" alt="Palak Paneer" class="recipe-img">
+    <div class="recipe-content">
+      <h1>Palak Paneer</h1>
+      <p>A healthy and delicious Indian curry made with fresh spinach and cottage cheese (paneer).</p>
+
+      <h3>🥬 Ingredients:</h3>
+      <ul>
+        <li>250g fresh spinach leaves</li>
+        <li>200g paneer (cubed)</li>
+        <li>1 large onion (finely chopped)</li>
+        <li>2 tomatoes (pureed)</li>
+        <li>1 green chili (chopped)</li>
+        <li>1 tsp cumin seeds</li>
+        <li>1/2 tsp turmeric powder</li>
+        <li>1 tsp garam masala</li>
+        <li>1/2 tsp red chili powder</li>
+        <li>1/2 cup fresh cream</li>
+        <li>2 tbsp ghee or oil</li>
+        <li>Salt to taste</li>
+      </ul>
+
+      <h3>👨‍🍳 Instructions:</h3>
+      <ol>
+        <li>Blanch spinach leaves in boiling water for 2 minutes, then transfer to ice water. Puree the spinach and set aside.</li>
+        <li>Heat ghee in a pan and sauté cumin seeds, chopped onions, and green chili until golden brown.</li>
+        <li>Add pureed tomatoes, turmeric powder, red chili powder, and garam masala. Cook for 5 minutes.</li>
+        <li>Add the spinach puree and cook for another 5-7 minutes until the mixture thickens.</li>
+        <li>Gently add the paneer cubes and simmer for 5 minutes. Add fresh cream and cook for another 2 minutes.</li>
+        <li>Serve hot with naan or rice.</li>
+      </ol>
+
+      <h3>🛒 Buy Ingredients:</h3>
+      <form action="cart.html" method="GET" class="buy-ingredients-form">
+        <table>
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Quantity</th>
+              <th>Add</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spinach leaves</td>
+              <td><input type="text" name="spinach" placeholder="e.g., 250g" /></td>
+              <td><input type="checkbox" name="add_spinach" /></td>
+            </tr>
+            <tr>
+              <td>Paneer</td>
+              <td><input type="text" name="paneer" placeholder="e.g., 200g" /></td>
+              <td><input type="checkbox" name="add_paneer" /></td>
+            </tr>
+            <tr>
+              <td>Onion</td>
+              <td><input type="text" name="onion" placeholder="e.g., 1 large" /></td>
+              <td><input type="checkbox" name="add_onion" /></td>
+            </tr>
+            <tr>
+              <td>Tomatoes</td>
+              <td><input type="text" name="tomatoes" placeholder="e.g., 2 pcs" /></td>
+              <td><input type="checkbox" name="add_tomatoes" /></td>
+            </tr>
+            <tr>
+              <td>Green chili</td>
+              <td><input type="text" name="green_chili" placeholder="e.g., 1 pc" /></td>
+              <td><input type="checkbox" name="add_green_chili" /></td>
+            </tr>
+            <tr>
+              <td>Cumin seeds</td>
+              <td><input type="text" name="cumin" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_cumin" /></td>
+            </tr>
+            <tr>
+              <td>Garam masala</td>
+              <td><input type="text" name="garam_masala" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_garam_masala" /></td>
+            </tr>
+            <tr>
+              <td>Red chili powder</td>
+              <td><input type="text" name="chili_powder" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_chili_powder" /></td>
+            </tr>
+            <tr>
+              <td>Fresh cream</td>
+              <td><input type="text" name="cream" placeholder="e.g., 200ml" /></td>
+              <td><input type="checkbox" name="add_cream" /></td>
+            </tr>
+            <tr>
+              <td>Ghee or Oil</td>
+              <td><input type="text" name="ghee" placeholder="e.g., 50ml" /></td>
+              <td><input type="checkbox" name="add_ghee" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <button type="submit" class="cart-button">🛒 Add Selected to Cart</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 FreshBite. Taste the freshness!</p>
+  </footer>
+
+  <script>
+    document.querySelector('.buy-ingredients-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent default form submission
+  
+      const ingredients = [
+        { name: "Spinach leaves", key: "spinach", price: 30 },
+        { name: "Paneer", key: "paneer", price: 100 },
+        { name: "Onion", key: "onion", price: 10 },
+        { name: "Tomatoes", key: "tomatoes", price: 20 },
+        { name: "Green chili", key: "green_chili", price: 5 },
+        { name: "Cumin seeds", key: "cumin", price: 15 },
+        { name: "Garam masala", key: "garam_masala", price: 25 },
+        { name: "Red chili powder", key: "chili_powder", price: 15 },
+        { name: "Fresh cream", key: "cream", price: 40 },
+        { name: "Ghee or Oil", key: "ghee", price: 50 },
+      ];
+  
+      const selectedItems = [];
+  
+      ingredients.forEach(item => {
+        const checked = document.querySelector(`input[name="add_${item.key}"]`).checked;
+        const quantity = document.querySelector(`input[name="${item.key}"]`).value;
+        if (checked && quantity.trim() !== "") {
+          selectedItems.push({
+            name: item.name,
+            quantity: quantity,
+            price: item.price
+          });
+        }
+      });
+  
+      localStorage.setItem("cartItems", JSON.stringify(selectedItems));
+      window.location.href = "cart.html";
+    });
+  </script>
+  
+</body>
+</html>

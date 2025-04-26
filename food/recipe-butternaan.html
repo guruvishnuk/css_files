@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Butter Naan - FreshBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #ff7043;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .recipe-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .recipe-content {
+      padding: 2rem;
+    }
+
+    .recipe-content h1 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-content h3 {
+      color: #ff7043;
+      margin-top: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #333;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .buy-ingredients-form {
+      margin-top: 2rem;
+    }
+
+    .buy-ingredients-form table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .buy-ingredients-form th,
+    .buy-ingredients-form td {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .buy-ingredients-form input[type="text"] {
+      width: 90%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .cart-button {
+      margin-top: 1rem;
+      background-color: #ff7043;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cart-button:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="recipes.html">Recipes</a>
+    </div>
+    <strong style="color:white;">FreshBite</strong>
+  </nav>
+
+  <div class="recipe-container">
+    <img src="./images food/Butter Naan1.jpeg" alt="Butter Naan" class="recipe-img">
+    <div class="recipe-content">
+      <h1>Butter Naan</h1>
+      <p>Soft and fluffy naan brushed with butter, perfect with Indian curries and tandoori dishes!</p>
+
+      <h3>🍞 Ingredients:</h3>
+      <ul>
+        <li>2 cups all-purpose flour</li>
+        <li>1/2 tsp baking powder</li>
+        <li>1/4 tsp baking soda</li>
+        <li>1/2 tsp salt</li>
+        <li>1/2 cup yogurt</li>
+        <li>1/4 cup warm milk</li>
+        <li>1 tsp sugar</li>
+        <li>2 tbsp oil</li>
+        <li>2 tbsp butter (for brushing)</li>
+      </ul>
+
+      <h3>👨‍🍳 Instructions:</h3>
+      <ol>
+        <li>Mix flour, baking powder, baking soda, and salt in a bowl.</li>
+        <li>Add yogurt, milk, sugar, and oil. Knead into a soft dough and let it rest for 2 hours.</li>
+        <li>Divide dough into balls, roll into oval shapes.</li>
+        <li>Cook on hot tawa or pan till golden brown. Flip and cook other side.</li>
+        <li>Brush with butter and serve hot with curry.</li>
+      </ol>
+
+      <h3>🛒 Buy Ingredients:</h3>
+      <form action="cart.html" method="GET" class="buy-ingredients-form">
+        <table>
+          <thead>
+            <tr><th>Ingredient</th><th>Quantity</th><th>Add</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>All-purpose flour</td><td><input type="text" name="flour" placeholder="e.g., 1 kg" /></td><td><input type="checkbox" name="add_flour" /></td></tr>
+            <tr><td>Baking powder</td><td><input type="text" name="baking_powder" placeholder="e.g., 50g" /></td><td><input type="checkbox" name="add_baking_powder" /></td></tr>
+            <tr><td>Baking soda</td><td><input type="text" name="baking_soda" placeholder="e.g., 50g" /></td><td><input type="checkbox" name="add_baking_soda" /></td></tr>
+            <tr><td>Salt</td><td><input type="text" name="salt" placeholder="e.g., 500g" /></td><td><input type="checkbox" name="add_salt" /></td></tr>
+            <tr><td>Yogurt</td><td><input type="text" name="yogurt" placeholder="e.g., 200g" /></td><td><input type="checkbox" name="add_yogurt" /></td></tr>
+            <tr><td>Warm milk</td><td><input type="text" name="milk" placeholder="e.g., 250ml" /></td><td><input type="checkbox" name="add_milk" /></td></tr>
+            <tr><td>Sugar</td><td><input type="text" name="sugar" placeholder="e.g., 100g" /></td><td><input type="checkbox" name="add_sugar" /></td></tr>
+            <tr><td>Oil</td><td><input type="text" name="oil" placeholder="e.g., 200ml" /></td><td><input type="checkbox" name="add_oil" /></td></tr>
+            <tr><td>Butter</td><td><input type="text" name="butter" placeholder="e.g., 100g" /></td><td><input type="checkbox" name="add_butter" /></td></tr>
+          </tbody>
+        </table>
+        <br>
+        <button type="submit" class="cart-button">🛒 Add Selected to Cart</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 FreshBite. Taste the freshness!</p>
+  </footer>
+
+  <script>
+    document.querySelector('.buy-ingredients-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const ingredients = [
+        { name: "All-purpose flour", key: "flour", price: 40 },
+        { name: "Baking powder", key: "baking_powder", price: 10 },
+        { name: "Baking soda", key: "baking_soda", price: 10 },
+        { name: "Salt", key: "salt", price: 10 },
+        { name: "Yogurt", key: "yogurt", price: 20 },
+        { name: "Warm milk", key: "milk", price: 20 },
+        { name: "Sugar", key: "sugar", price: 10 },
+        { name: "Oil", key: "oil", price: 30 },
+        { name: "Butter", key: "butter", price: 50 },
+      ];
+      const selectedItems = [];
+      ingredients.forEach(item => {
+        const checked = document.querySelector(`input[name="add_${item.key}"]`).checked;
+        const quantity = document.querySelector(`input[name="${item.key}"]`).value;
+        if (checked && quantity.trim() !== "") {
+          selectedItems.push({
+            name: item.name,
+            quantity: quantity,
+            price: item.price
+          });
+        }
+      });
+      localStorage.setItem("cartItems", JSON.stringify(selectedItems));
+      window.location.href = "cart.html";
+    });
+  </script>
+</body>
+</html>

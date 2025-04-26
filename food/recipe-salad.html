@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Greek Salad - FreshBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf6f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #ff7043;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .recipe-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .recipe-content {
+      padding: 2rem;
+    }
+
+    .recipe-content h1 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-content h3 {
+      color: #ff7043;
+      margin-top: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #333;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="recipe-details.html">📖 All Recipes</a>
+    </div>
+    <strong style="color:white;">FreshBite</strong>
+  </nav>
+
+  <!-- Recipe Section -->
+  <div class="recipe-container">
+    <img src="./images food/greensalad.webp" alt="Greek Salad" class="recipe-img">
+    <div class="recipe-content">
+      <h1>Greek Salad</h1>
+      <p>A light and refreshing Mediterranean salad loaded with crisp vegetables, olives, and feta cheese — perfect for summer days!</p>
+
+      <h3>🥗 Ingredients:</h3>
+      <ul>
+        <li>1 cucumber (sliced)</li>
+        <li>2 tomatoes (chopped)</li>
+        <li>1 red onion (thinly sliced)</li>
+        <li>1 green bell pepper (sliced)</li>
+        <li>1/2 cup Kalamata olives</li>
+        <li>1/2 cup feta cheese (cubed or crumbled)</li>
+        <li>2 tbsp olive oil</li>
+        <li>1 tbsp red wine vinegar</li>
+        <li>1/2 tsp dried oregano</li>
+        <li>Salt and black pepper to taste</li>
+      </ul>
+
+      <h3>👨‍🍳 Instructions:</h3>
+      <ol>
+        <li>In a large bowl, combine cucumber, tomatoes, onions, and bell peppers.</li>
+        <li>Add olives and feta cheese on top.</li>
+        <li>In a small bowl, whisk together olive oil, vinegar, oregano, salt, and pepper.</li>
+        <li>Drizzle the dressing over the salad and toss gently.</li>
+        <li>Serve chilled or at room temperature. Enjoy fresh!</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 FreshBite. Taste the freshness!</p>
+  </footer>
+
+</body>
+</html>

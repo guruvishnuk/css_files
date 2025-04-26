@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FreshBite - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fffaf4;
+      color: #333;
+      transition: background-color 0.4s, color 0.4s;
+    }
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #eee;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+      transition: background-color 0.4s;
+    }
+    body.dark-mode nav {
+      background-color: #2c2c2c;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ff7043;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    nav a:hover {
+      color: #e35c2a;
+      transform: scale(1.05);
+    }
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toggle-container input[type="checkbox"] {
+      width: 40px;
+      height: 20px;
+    }
+    header {
+      background-color: #ff7043;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+    }
+    .hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background: rgba(0,0,0,0.4);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .hero-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-text a {
+      background: #ff7043;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .hero-text a:hover {
+      background: #e35c2a;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2rem;
+      color: #ff7043;
+      margin-bottom: 1.5rem;
+    }
+    .section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .hero-text h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍽 Welcome to FreshBite</h1>
+    <p>Explore and order ingredients for your favorite recipes</p>
+  </header>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="recipe-details.html"><i class="fas fa-book-open"></i> Recipes</a>
+    <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <div class="toggle-container">
+      <label for="modeToggle">🌙</label>
+      <input type="checkbox" id="modeToggle" />
+    </div>
+  </nav>
+
+  <div class="hero">
+    <video autoplay muted loop>
+      <source src="./images food/freshbite-hero.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-text">
+      <h2>Cook Delicious. Eat Fresh.</h2>
+      <a href="recipe-details.html">Explore Recipes</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Why FreshBite?</h2>
+    <p>FreshBite brings you mouth-watering recipes and lets you order all the ingredients you need in just a few clicks. Whether you're craving Indian classics or tasty snacks, we've got you covered.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FreshBite. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("modeToggle");
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>

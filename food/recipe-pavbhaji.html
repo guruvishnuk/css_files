@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pav Bhaji - FreshBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #ff7043;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .recipe-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .recipe-content {
+      padding: 2rem;
+    }
+
+    .recipe-content h1 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-content h3 {
+      color: #ff7043;
+      margin-top: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #333;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Buy Ingredients Styles */
+    .buy-ingredients-form {
+      margin-top: 2rem;
+    }
+
+    .buy-ingredients-form table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .buy-ingredients-form th,
+    .buy-ingredients-form td {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .buy-ingredients-form input[type="text"] {
+      width: 90%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .cart-button {
+      margin-top: 1rem;
+      background-color: #ff7043;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cart-button:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="recipe-details.html">Recipes</a>
+    </div>
+    <strong style="color:white;">FreshBite</strong>
+  </nav>
+
+  <!-- Recipe Section -->
+  <div class="recipe-container">
+    <img src="./images food/Pav Bhaji.jpeg" alt="Pav Bhaji" class="recipe-img">
+    <div class="recipe-content">
+      <h1>Pav Bhaji</h1>
+      <p>A famous Mumbai street food, Pav Bhaji is a spicy vegetable mash served with buttered pav (bread rolls). Perfect for a quick and satisfying meal!</p>
+
+      <h3>🥕 Ingredients:</h3>
+      <ul>
+        <li>2 cups mixed vegetables (carrot, peas, beans, potato)</li>
+        <li>1 large onion (finely chopped)</li>
+        <li>2 tomatoes (finely chopped)</li>
+        <li>1 green bell pepper (finely chopped)</li>
+        <li>2 tbsp pav bhaji masala</li>
+        <li>1 tsp cumin seeds</li>
+        <li>1 tsp ginger-garlic paste</li>
+        <li>2 tbsp butter</li>
+        <li>Salt to taste</li>
+        <li>Chopped coriander leaves</li>
+        <li>Pav (bread rolls)</li>
+      </ul>
+
+      <h3>👨‍🍳 Instructions:</h3>
+      <ol>
+        <li>Boil the mixed vegetables until soft and mash them together.</li>
+        <li>Heat butter in a pan, add cumin seeds, ginger-garlic paste, and onions. Cook until onions are golden.</li>
+        <li>Add chopped tomatoes, bell pepper, and pav bhaji masala. Cook for a few minutes.</li>
+        <li>Mix in the mashed vegetables, salt, and cook for 5 minutes on medium heat.</li>
+        <li>Toast pav in butter and serve the bhaji hot with the toasted pav and a sprinkle of coriander leaves.</li>
+      </ol>
+
+      <h3>🛒 Buy Ingredients:</h3>
+      <form action="cart.html" method="GET" class="buy-ingredients-form">
+        <table>
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Quantity</th>
+              <th>Add</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mixed vegetables</td>
+              <td><input type="text" name="mixed_vegetables" placeholder="e.g., 500g" /></td>
+              <td><input type="checkbox" name="add_mixed_vegetables" /></td>
+            </tr>
+            <tr>
+              <td>Onion</td>
+              <td><input type="text" name="onion" placeholder="e.g., 2 pcs" /></td>
+              <td><input type="checkbox" name="add_onion" /></td>
+            </tr>
+            <tr>
+              <td>Tomatoes</td>
+              <td><input type="text" name="tomatoes" placeholder="e.g., 3 pcs" /></td>
+              <td><input type="checkbox" name="add_tomatoes" /></td>
+            </tr>
+            <tr>
+              <td>Bell pepper</td>
+              <td><input type="text" name="bell_pepper" placeholder="e.g., 1" /></td>
+              <td><input type="checkbox" name="add_bell_pepper" /></td>
+            </tr>
+            <tr>
+              <td>Pav bhaji masala</td>
+              <td><input type="text" name="pav_bhaji_masala" placeholder="e.g., 100g" /></td>
+              <td><input type="checkbox" name="add_pav_bhaji_masala" /></td>
+            </tr>
+            <tr>
+              <td>Ginger-garlic paste</td>
+              <td><input type="text" name="ginger_garlic_paste" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_ginger_garlic_paste" /></td>
+            </tr>
+            <tr>
+              <td>Butter</td>
+              <td><input type="text" name="butter" placeholder="e.g., 200g" /></td>
+              <td><input type="checkbox" name="add_butter" /></td>
+            </tr>
+            <tr>
+              <td>Pav (bread rolls)</td>
+              <td><input type="text" name="pav" placeholder="e.g., 6 pcs" /></td>
+              <td><input type="checkbox" name="add_pav" /></td>
+            </tr>
+            <tr>
+              <td>Coriander leaves</td>
+              <td><input type="text" name="coriander" placeholder="e.g., 1 bunch" /></td>
+              <td><input type="checkbox" name="add_coriander" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <button type="submit" class="cart-button">🛒 Add Selected to Cart</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 FreshBite. Taste the freshness!</p>
+  </footer>
+
+  <script>
+    document.querySelector('.buy-ingredients-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent default form submission
+  
+      const ingredients = [
+        { name: "Mixed vegetables", key: "mixed_vegetables", price: 40 },
+        { name: "Onion", key: "onion", price: 10 },
+        { name: "Tomatoes", key: "tomatoes", price: 15 },
+        { name: "Bell pepper", key: "bell_pepper", price: 20 },
+        { name: "Pav bhaji masala", key: "pav_bhaji_masala", price: 25 },
+        { name: "Ginger-garlic paste", key: "ginger_garlic_paste", price: 15 },
+        { name: "Butter", key: "butter", price: 50 },
+        { name: "Pav (bread rolls)", key: "pav", price: 25 },
+        { name: "Coriander leaves", key: "coriander", price: 5 },
+      ];
+  
+      const selectedItems = [];
+  
+      ingredients.forEach(item => {
+        const checked = document.querySelector(`input[name="add_${item.key}"]`).checked;
+        const quantity = document.querySelector(`input[name="${item.key}"]`).value;
+        if (checked && quantity.trim() !== "") {
+          selectedItems.push({
+            name: item.name,
+            quantity: quantity,
+            price: item.price
+          });
+        }
+      });
+  
+      localStorage.setItem("cartItems", JSON.stringify(selectedItems));
+      window.location.href = "cart.html";
+    });
+  </script>
+  
+</body>
+</html>

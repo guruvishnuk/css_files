@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aloo Paratha - FreshBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #ff7043;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .recipe-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .recipe-video {
+      padding: 1.5rem;
+    }
+
+    .recipe-video video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .recipe-content {
+      padding: 2rem;
+    }
+
+    .recipe-content h1 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-content h3 {
+      color: #ff7043;
+      margin-top: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #333;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .buy-ingredients-form {
+      margin-top: 2rem;
+    }
+
+    .buy-ingredients-form table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .buy-ingredients-form th,
+    .buy-ingredients-form td {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .buy-ingredients-form input[type="text"] {
+      width: 90%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .cart-button {
+      margin-top: 1rem;
+      background-color: #ff7043;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cart-button:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="recipe-details.html">Recipes</a>
+    </div>
+    <strong style="color:white;">FreshBite</strong>
+  </nav>
+
+  <!-- Recipe Section -->
+  <div class="recipe-container">
+    <img src="./images food/Aloo Paratha4.jpeg" alt="Aloo Paratha" class="recipe-img">
+
+    <!-- Recipe Video -->
+    <div class="recipe-video">
+      <video controls>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/W4FSf_VPqlc?si=oEz63R3EgUCNxd7n&amp;start=18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="recipe-content">
+      <h1>Aloo Paratha</h1>
+      <p>Delicious stuffed flatbread filled with spicy mashed potatoes, perfect for breakfast or lunch!</p>
+
+      <h3>🥔 Ingredients:</h3>
+      <ul>
+        <li>2 cups wheat flour</li>
+        <li>3 large boiled potatoes</li>
+        <li>1 green chili (chopped)</li>
+        <li>1/2 tsp cumin seeds</li>
+        <li>1 tsp garam masala</li>
+        <li>1 tsp red chili powder</li>
+        <li>Salt to taste</li>
+        <li>2 tbsp chopped coriander leaves</li>
+        <li>Ghee or oil for roasting</li>
+      </ul>
+
+      <h3>👨‍🍳 Instructions:</h3>
+      <ol>
+        <li>Knead the wheat flour with water to make soft dough. Set aside for 20 minutes.</li>
+        <li>Mash boiled potatoes and mix in chili, cumin, garam masala, chili powder, salt, and coriander.</li>
+        <li>Divide dough into balls, roll each slightly, place filling in the center, seal, and roll again gently.</li>
+        <li>Heat a pan and roast each paratha with ghee until golden brown on both sides.</li>
+        <li>Serve hot with curd, butter, or pickle.</li>
+      </ol>
+
+      <h3>🛒 Buy Ingredients:</h3>
+      <form action="cart.html" method="GET" class="buy-ingredients-form">
+        <table>
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Quantity</th>
+              <th>Add</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wheat flour</td>
+              <td><input type="text" name="wheat_flour" placeholder="e.g., 1 kg" /></td>
+              <td><input type="checkbox" name="add_wheat_flour" /></td>
+            </tr>
+            <tr>
+              <td>Boiled potatoes</td>
+              <td><input type="text" name="potatoes" placeholder="e.g., 3 pcs" /></td>
+              <td><input type="checkbox" name="add_potatoes" /></td>
+            </tr>
+            <tr>
+              <td>Green chili</td>
+              <td><input type="text" name="green_chili" placeholder="e.g., 2 pcs" /></td>
+              <td><input type="checkbox" name="add_green_chili" /></td>
+            </tr>
+            <tr>
+              <td>Cumin seeds</td>
+              <td><input type="text" name="cumin" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_cumin" /></td>
+            </tr>
+            <tr>
+              <td>Garam masala</td>
+              <td><input type="text" name="masala" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_masala" /></td>
+            </tr>
+            <tr>
+              <td>Red chili powder</td>
+              <td><input type="text" name="chili_powder" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_chili_powder" /></td>
+            </tr>
+            <tr>
+              <td>Salt</td>
+              <td><input type="text" name="salt" placeholder="e.g., 500g" /></td>
+              <td><input type="checkbox" name="add_salt" /></td>
+            </tr>
+            <tr>
+              <td>Coriander leaves</td>
+              <td><input type="text" name="coriander" placeholder="e.g., 1 bunch" /></td>
+              <td><input type="checkbox" name="add_coriander" /></td>
+            </tr>
+            <tr>
+              <td>Ghee or Oil</td>
+              <td><input type="text" name="ghee" placeholder="e.g., 250ml" /></td>
+              <td><input type="checkbox" name="add_ghee" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <button type="submit" class="cart-button">🛒 Add Selected to Cart</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 FreshBite. Taste the freshness!</p>
+  </footer>
+
+  <script>
+    document.querySelector('.buy-ingredients-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      const ingredients = [
+        { name: "Wheat flour", key: "wheat_flour", price: 40 },
+        { name: "Boiled potatoes", key: "potatoes", price: 10 },
+        { name: "Green chili", key: "green_chili", price: 5 },
+        { name: "Cumin seeds", key: "cumin", price: 20 },
+        { name: "Garam masala", key: "masala", price: 25 },
+        { name: "Red chili powder", key: "chili_powder", price: 15 },
+        { name: "Salt", key: "salt", price: 10 },
+        { name: "Coriander leaves", key: "coriander", price: 10 },
+        { name: "Ghee or Oil", key: "ghee", price: 50 },
+      ];
+  
+      const selectedItems = [];
+  
+      ingredients.forEach(item => {
+        const checked = document.querySelector(`input[name="add_${item.key}"]`).checked;
+        const quantity = document.querySelector(`input[name="${item.key}"]`).value;
+        if (checked && quantity.trim() !== "") {
+          selectedItems.push({
+            name: item.name,
+            quantity: quantity,
+            price: item.price
+          });
+        }
+      });
+  
+      localStorage.setItem("cartItems", JSON.stringify(selectedItems));
+      window.location.href = "cart.html";
+    });
+  </script>
+</body>
+</html>

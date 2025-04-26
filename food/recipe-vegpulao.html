@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veg Pulao - FreshBite</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffdf2;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #f57c00;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #ef6c00;
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      color: #f57c00;
+      margin-top: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      background-color: #f57c00;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background-color: #e65100;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #e65100;
+      color: white;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="recipe-details.html">All Recipes</a>
+    </div>
+    <strong style="color: white;">FreshBite</strong>
+  </nav>
+
+  <!-- Recipe Content -->
+  <div class="container">
+    <h1>Veg Pulao</h1>
+    <img src="./images food/pulav1.jpg" alt="Veg Pulao">
+
+    <h3>🍚 Ingredients:</h3>
+    <ul>
+      <li>1 cup basmati rice</li>
+      <li>1 onion, thinly sliced</li>
+      <li>1 carrot, chopped</li>
+      <li>1/2 cup peas</li>
+      <li>1 potato, cubed</li>
+      <li>1/4 cup beans, chopped</li>
+      <li>2 cloves, 1 bay leaf, 1 cardamom</li>
+      <li>1 tsp cumin seeds</li>
+      <li>1 tsp garam masala</li>
+      <li>2 tbsp oil or ghee</li>
+      <li>Salt to taste</li>
+      <li>2 cups water</li>
+    </ul>
+
+    <h3>👨‍🍳 Instructions:</h3>
+    <ol>
+      <li>Wash and soak basmati rice for 15–20 minutes. Drain and set aside.</li>
+      <li>Heat oil/ghee in a pan. Add cumin, cloves, cardamom, and bay leaf. Sauté.</li>
+      <li>Add onions, cook until golden. Add vegetables and sauté for 2–3 minutes.</li>
+      <li>Add garam masala and salt. Mix well.</li>
+      <li>Add rice and 2 cups water. Bring to a boil, then cover and cook on low heat for 12–15 minutes.</li>
+      <li>Fluff gently and serve hot with raita or curry.</li>
+    </ol>
+
+    <a href="cart.html" class="buy-btn">Buy Ingredients</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 FreshBite. Flavorful bites await!</p>
+  </footer>
+
+</body>
+</html>

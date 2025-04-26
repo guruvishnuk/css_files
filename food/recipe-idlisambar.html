@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Idli Sambar - FreshBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #ff7043;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    .recipe-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .recipe-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .recipe-content {
+      padding: 2rem;
+    }
+
+    .recipe-content h1 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-content h3 {
+      color: #ff7043;
+      margin-top: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #333;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Buy Ingredients Styles */
+    .buy-ingredients-form {
+      margin-top: 2rem;
+    }
+
+    .buy-ingredients-form table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .buy-ingredients-form th,
+    .buy-ingredients-form td {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .buy-ingredients-form input[type="text"] {
+      width: 90%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .cart-button {
+      margin-top: 1rem;
+      background-color: #ff7043;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cart-button:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="recipe-details.html">Recipes</a>
+    </div>
+    <strong style="color:white;">FreshBite</strong>
+  </nav>
+
+  <!-- Recipe Section -->
+  <div class="recipe-container">
+    <img src="./images food/idlisambar.webp" alt="Idli Sambar" class="recipe-img">
+    <div class="recipe-content">
+      <h1>Idli Sambar</h1>
+      <p>A South Indian classic combination of fluffy idlis with flavorful sambar and coconut chutney!</p>
+
+      <h3>🥔 Ingredients for Idli:</h3>
+      <ul>
+        <li>1 cup rice</li>
+        <li>1/4 cup urad dal (split black gram)</li>
+        <li>1/4 tsp fenugreek seeds</li>
+        <li>Water (for grinding)</li>
+        <li>Salt to taste</li>
+      </ul>
+
+      <h3>🥣 Ingredients for Sambar:</h3>
+      <ul>
+        <li>1/2 cup toor dal (pigeon peas)</li>
+        <li>1 onion, chopped</li>
+        <li>1 tomato, chopped</li>
+        <li>1/2 tsp mustard seeds</li>
+        <li>1/4 tsp turmeric powder</li>
+        <li>1/2 tsp red chili powder</li>
+        <li>1/2 tsp sambar powder</li>
+        <li>1/2 tsp tamarind paste</li>
+        <li>Salt to taste</li>
+        <li>Fresh curry leaves</li>
+        <li>1 tbsp oil</li>
+      </ul>
+
+      <h3>👨‍🍳 Instructions:</h3>
+      <ol>
+        <li>Wash rice and urad dal separately. Soak both for 6-8 hours.</li>
+        <li>Grind the rice and dal mixture with fenugreek seeds and water into a smooth batter.</li>
+        <li>Ferment the batter for 8-12 hours, depending on the weather.</li>
+        <li>For sambar, cook toor dal in a pressure cooker with water until soft.</li>
+        <li>Heat oil in a pan, add mustard seeds, and let them splutter. Add onions, tomatoes, turmeric, and red chili powder.</li>
+        <li>Add cooked dal, tamarind paste, sambar powder, and water to make a thick soup-like consistency. Cook for 10 minutes.</li>
+        <li>Steam the idlis in a steamer for 10-12 minutes, or until they are soft and fluffy.</li>
+        <li>Serve the idlis hot with sambar and coconut chutney on the side.</li>
+      </ol>
+
+      <h3>🛒 Buy Ingredients:</h3>
+      <form action="cart.html" method="GET" class="buy-ingredients-form">
+        <table>
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Quantity</th>
+              <th>Add</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rice</td>
+              <td><input type="text" name="rice" placeholder="e.g., 1 kg" /></td>
+              <td><input type="checkbox" name="add_rice" /></td>
+            </tr>
+            <tr>
+              <td>Urad dal</td>
+              <td><input type="text" name="urad_dal" placeholder="e.g., 250g" /></td>
+              <td><input type="checkbox" name="add_urad_dal" /></td>
+            </tr>
+            <tr>
+              <td>Fenugreek seeds</td>
+              <td><input type="text" name="fenugreek" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_fenugreek" /></td>
+            </tr>
+            <tr>
+              <td>Toor dal</td>
+              <td><input type="text" name="toor_dal" placeholder="e.g., 250g" /></td>
+              <td><input type="checkbox" name="add_toor_dal" /></td>
+            </tr>
+            <tr>
+              <td>Onion</td>
+              <td><input type="text" name="onion" placeholder="e.g., 1 pcs" /></td>
+              <td><input type="checkbox" name="add_onion" /></td>
+            </tr>
+            <tr>
+              <td>Tomato</td>
+              <td><input type="text" name="tomato" placeholder="e.g., 1 pcs" /></td>
+              <td><input type="checkbox" name="add_tomato" /></td>
+            </tr>
+            <tr>
+              <td>Mustard seeds</td>
+              <td><input type="text" name="mustard_seeds" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_mustard_seeds" /></td>
+            </tr>
+            <tr>
+              <td>Sambar powder</td>
+              <td><input type="text" name="sambar_powder" placeholder="e.g., 50g" /></td>
+              <td><input type="checkbox" name="add_sambar_powder" /></td>
+            </tr>
+            <tr>
+              <td>Tamarind paste</td>
+              <td><input type="text" name="tamarind" placeholder="e.g., 100g" /></td>
+              <td><input type="checkbox" name="add_tamarind" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <button type="submit" class="cart-button">🛒 Add Selected to Cart</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 FreshBite. Taste the freshness!</p>
+  </footer>
+
+  <script>
+    document.querySelector('.buy-ingredients-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent default form submission
+  
+      const ingredients = [
+        { name: "Rice", key: "rice", price: 40 },
+        { name: "Urad dal", key: "urad_dal", price: 30 },
+        { name: "Fenugreek seeds", key: "fenugreek", price: 15 },
+        { name: "Toor dal", key: "toor_dal", price: 35 },
+        { name: "Onion", key: "onion", price: 10 },
+        { name: "Tomato", key: "tomato", price: 8 },
+        { name: "Mustard seeds", key: "mustard_seeds", price: 12 },
+        { name: "Sambar powder", key: "sambar_powder", price: 20 },
+        { name: "Tamarind paste", key: "tamarind", price: 25 },
+      ];
+
+      let total = 0;
+      let cart = [];
+
+      ingredients.forEach(item => {
+        const quantity = document.querySelector(`[name="${item.key}"]`).value;
+        if (quantity && document.querySelector(`[name="add_${item.key}"]`).checked) {
+          cart.push(`${item.name}: ${quantity}`);
+          total += parseInt(quantity) * item.price;
+        }
+      });
+
+      if (cart.length > 0) {
+        alert(`Added to Cart: \n${cart.join("\n")}\nTotal Price: ₹${total}`);
+      } else {
+        alert("No ingredients selected!");
+      }
+    });
+  </script>
+
+</body>
+</html>

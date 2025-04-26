@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart - FreshBite</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff8f2;
+      color: #333;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #eee;
+    }
+
+    .nav {
+      background-color: #ff7043;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #e0e0e0;
+    }
+
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .toggle-container input[type="checkbox"] {
+      width: 40px;
+      height: 20px;
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode .cart-container {
+      background-color: #2a2a2a;
+    }
+
+    h1 {
+      color: #ff7043;
+      margin-bottom: 1.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    body.dark-mode .total {
+      color: #ddd;
+    }
+
+    .empty-message {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #999;
+      margin-top: 3rem;
+    }
+
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="recipe-details.html"><i class="fas fa-book-open"></i> Recipes</a>
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+    <div class="toggle-container">
+      <label for="modeToggle">🌙</label>
+      <input type="checkbox" id="modeToggle" />
+    </div>
+  </nav>
+
+  <div class="cart-container" id="cart">
+    <h1>🛒 Your Cart</h1>
+    <div id="cart-content"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FreshBite. Taste the freshness!</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("modeToggle");
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+
+    const cartData = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const cartContent = document.getElementById("cart-content");
+
+    if (cartData.length === 0) {
+      cartContent.innerHTML = "<p class='empty-message'>Your cart is empty.</p>";
+    } else {
+      let total = 0;
+      let table = `<table>
+        <thead>
+          <tr>
+            <th>Ingredient</th>
+            <th>Quantity</th>
+            <th>Price (₹)</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+      cartData.forEach(item => {
+        total += item.price;
+        table += `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>₹${item.price}</td>
+          </tr>`;
+      });
+
+      table += `</tbody></table>
+        <div class="total">Total: ₹${total}</div>`;
+
+      cartContent.innerHTML = table;
+    }
+  </script>
+</body>
+</html>
