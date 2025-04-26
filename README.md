@@ -1,8 +1,21 @@
 # Food projects
-1.download vs code
-2.and install all extensions as per your requirements
-3.add images to the recipes inside the code
-4.or add images or download images and store them inside the image folder given
-5.add accordingly your need
-6.and click on golive to see the output
-7.thankyou!.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>README</title>
+</head>
+<body>
+  <h1>Setup Instructions</h1>
+  <ol>
+    <li>Download and install <strong>Visual Studio Code (VS Code)</strong>.</li>
+    <li>Install all required extensions as per your project needs.</li>
+    <li>Add images to the recipes directly inside the code.</li>
+    <li>Alternatively, download images and store them inside the <code>images</code> folder provided.</li>
+    <li>Adjust and organize the images and content as needed for your project.</li>
+    <li>Click on <strong>Go Live</strong> (from Live Server extension) to view the output.</li>
+    <li><strong>Thank you!</strong></li>
+  </ol>
+</body>
+</html>
+
